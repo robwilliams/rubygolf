@@ -26,7 +26,7 @@ class Golf
       r = []
       a.length.times {|c|
         r += a.permutation(c+1).to_a.collect{|x| x.sort}.reject{|x| 
-          x.length < 2 ? false : x[1] != x[0].succ || x[-1] != x[-2].succ
+          x.length < 2 ? false : x[1] != a[a.index(x[0]) + 1] || x[-1] != a[a.index(x[-2]) + 1]
         }.uniq
       }
       r
