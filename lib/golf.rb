@@ -46,5 +46,25 @@ class Golf
         end
       }
     end
+
+    def hole7(a)
+      r = []
+      loop {
+        break if a.empty?
+        
+        l = a.length - 1
+        
+        if l >= 0 and (a[0] + 3) >= a[l]
+          p = a.slice!(0..1)
+          puts a * ','
+          puts p * ','
+          puts '==='
+          r << "#{p[0]}-#{p[-1]}"
+        else
+          r << a.pop
+        end
+      }
+      r
+    end
   end
 end
